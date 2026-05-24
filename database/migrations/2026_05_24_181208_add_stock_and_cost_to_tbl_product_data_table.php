@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tbl_product_data', function (Blueprint $table) {
+        Schema::table('tblProductData', function (Blueprint $table) {
             $table->unsignedInteger('intStock')->after('strProductCode');
             $table->decimal('gbpCost', 10, 2)->after('intStock');
         });
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tbl_product_data', function (Blueprint $table) {
+        Schema::table('tblProductData', function (Blueprint $table) {
             $table->dropColumn(['intStock', 'gbpCost']);
         });
     }
